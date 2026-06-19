@@ -19,7 +19,10 @@
   <main class="experience">
     <section id="page1" class="page active" aria-label="Unlock surprise">
       <div class="panel unlock-panel">
-        <p class="kicker">A little universe for</p>
+        <button type="button" class="top-right-heart" aria-label="Reveal password"
+          onclick="showSecretPassword()">♥</button>
+          
+        <p class="kicker"><span id="universe">A little universe for</span><span id="showpass"></span></p>
         <h1>Geet</h1>
         <p class="copy">Enter the special date and step inside your birthday surprise.</p>
         <input id="pass" type="password" autocomplete="off" aria-label="Special date" readonly />
@@ -47,7 +50,7 @@
     <section id="page2" class="page memory-page" aria-label="Memory gallery">
       <div class="page-copy">
         <p class="kicker">Our tiny galaxy</p>
-        <h4>Baby Coolection</h4>
+        <h4>Baby Collection</h4>
       </div>
       <div class="memory-controls" aria-label="Memory controls">
         <button type="button" onclick="rotateMemories(-1)" aria-label="Previous memory">‹</button>

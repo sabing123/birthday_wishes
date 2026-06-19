@@ -68,6 +68,17 @@ function unlock() {
   }
 }
 
+function showSecretPassword() {
+  const secret = "21062001";
+  document.getElementById("universe").style.display = "none";
+
+  // Show Password
+  document.getElementById("showpass").style.display = "block";
+  document.getElementById("showpass").textContent = secret;
+
+}
+
+
 function tapKey(number) {
   if (passValue.length >= 8) return;
   passValue += number;
@@ -268,7 +279,7 @@ function createPhotoCarousel() {
   photoPaths.forEach((path, index) => {
     const texture = loader.load(path);
     texture.colorSpace = THREE.SRGBColorSpace;
-    texture.anisotropy = 8;
+    texture.anisotropy = 15;
 
     const group = new THREE.Group();
     const angle = index / photoPaths.length * Math.PI * 2;
