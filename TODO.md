@@ -1,0 +1,6 @@
+- [ ] Add Page 5 “Timeline Gallery” section to `index.html`
+- [ ] Add 1 heart-shaped button on Page 2 that navigates to Page 5
+- [ ] Update `app.js` to generate timeline items from `images/g1.jpg` ... `images/g18.jpg`
+- [ ] Add `goToTimeline()` and `renderTimeline()` functions in `app.js`
+- [ ] Add timeline + responsive styles in `style.css`
+- [ ] Verify navigation flow: page1 -> page2, heart -> page5, and ensure timeline renders

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Geet | Birthday Surprise</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <audio id="music" src="music/piano.mp3" loop></audio>
+  <audio id="heart" src="music/heartbeat.mp3"></audio>
+
+  <canvas id="scene" aria-hidden="true"></canvas>
+  <div id="glitterLayer" class="glitter-layer" aria-hidden="true"></div>
+
+  <main class="experience">
+    <section id="page1" class="page active" aria-label="Unlock surprise">
+      <div class="panel unlock-panel">
+        <p class="kicker">A little universe for</p>
+        <h1>Geet</h1>
+        <p class="copy">Enter the special date and step inside your birthday surprise.</p>
+        <input id="pass" type="password" autocomplete="off" aria-label="Special date" readonly />
+        <div class="pass-display" aria-hidden="true">
+          <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+        </div>
+        <div class="heart-keypad" aria-label="Birthday passcode keypad">
+          <button type="button" onclick="tapKey('1')">1</button>
+          <button type="button" onclick="tapKey('2')">2</button>
+          <button type="button" onclick="tapKey('3')">3</button>
+          <button type="button" onclick="tapKey('4')">4</button>
+          <button type="button" onclick="tapKey('5')">5</button>
+          <button type="button" onclick="tapKey('6')">6</button>
+          <button type="button" onclick="tapKey('7')">7</button>
+          <button type="button" onclick="tapKey('8')">8</button>
+          <button type="button" onclick="tapKey('9')">9</button>
+          <button type="button" onclick="deleteKey()">×</button>
+          <button type="button" onclick="tapKey('0')">0</button>
+          <button type="button" onclick="unlock()">OK</button>
+        </div>
+        <p id="error" role="status"></p>
+      </div>
+    </section>
+
+    <section id="page2" class="page memory-page" aria-label="Memory gallery">
+      <div class="page-copy">
+        <p class="kicker">Our tiny galaxy</p>
+        <h4>Baby Coolection</h4>
+      </div>
+      <div class="memory-controls" aria-label="Memory controls">
+        <button type="button" onclick="rotateMemories(-1)" aria-label="Previous memory">‹</button>
+        <button class="primary-btn" type="button" onclick="goToWishes()">Open Letter</button>
+        <button type="button" onclick="goToTimeline()" aria-label="Open Timeline Gallery"
+          class="heart-nav-btn">♥</button>
+        <button type="button" onclick="rotateMemories(1)" aria-label="Next memory">›</button>
+      </div>
+    </section>
+
+    <section id="page5" class="page timeline-page" aria-label="Timeline gallery">
+      <div class="panel timeline-panel">
+        <div class="timeline-header">
+          <p class="kicker">Our memory timeline</p>
+          <h4 class="timeline-title">A realistic little walk through time</h4>
+          <p class="timeline-subtitle">Scroll the moments — each photo is placed in sequence like a real story.</p>
+        </div>
+
+        <div id="timelineList" class="timeline-list" aria-label="Timeline items"></div>
+
+        <div class="timeline-footer">
+          <button type="button" onclick="showPage(2)" class="back-btn" aria-label="Back to Memory gallery">Back</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="page3" class="page" aria-label="Birthday letter">
+      <div class="panel letter-panel">
+        <p class="kicker">For your birthday</p>
+        <h2 class="letter-heading">Happy Birthday, Geet</h2>
+        <button class="letter-seal" type="button" onclick="revealWish()" aria-label="Reveal birthday message">
+          <span>Open my heart</span>
+        </button>
+        <div id="wishText" class="wish-text" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section id="page4" class="page" aria-label="Final birthday surprise">
+      <div class="panel final-panel">
+        <p class="kicker">One more wish</p>
+        <h5>Will you stay with me forever?</h5>
+        <button class="yes-btn" type="button" onclick="celebrate()">Yes</button>
+        <p class="copy">Today, tomorrow, and in every little lifetime we make together.</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/three@0.158.0/build/three.min.js"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>
