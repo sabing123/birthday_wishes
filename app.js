@@ -62,7 +62,13 @@ function unlock() {
     if (music) music.play().catch(() => { });
     showPage(2);
   } else {
-    document.getElementById("error").innerText = "Wrong date, but the love is still correct.";
+    const error = document.getElementById("error")
+    error.innerText = "You may forget lock password, my love, but I'll never forget how much you mean to me. ❤️ Passwords can be reset, but my feelings for you never will. 🥰 Please try to find the password which was hidden in the screen my love ❤️";
+    error.style.textAlign = "justify";
+    error.style.padding = "05px";
+    error.style.background = "#FF69B4";
+    error.style.colorr = "#fff";
+
     passValue = "";
     updatePassDisplay();
   }
@@ -295,8 +301,7 @@ function createPhotoCarousel() {
       map: texture,
       roughness: 0.44,
       metalness: 0.02,
-      emissive: new THREE.Color(0x1a0711),
-      emissiveIntensity: 0.08
+      emissiveIntensity: 0
     });
 
     const image = new THREE.Mesh(imageGeometry, imageMaterial);
